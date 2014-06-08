@@ -1,0 +1,51 @@
+body {
+  font-family: sans-serif;
+}
+.game{
+  width: 66%;
+  border: 2px solid;
+  margin: auto;
+}
+
+.header {
+  height: 120px;
+  border-bottom: 2px solid;
+}
+.inputHolder {
+  height: 330px;
+  border-bottom: 2px solid;
+  padding: 0px 70px;
+}
+.textHolder {
+  height: 500px;
+  padding: 0px 70px;
+}
+table{
+  margin: auto;
+  width: 100%;
+}
+.header > div {
+  float: left;
+}
+.picHolder{
+  border-right: solid;
+  height: 100%;
+  width: 23%;
+}
+.pic{
+  margin-left: 15%;
+  margin-top: 15px;
+}
+.pic > img{
+  max-width: 70%;
+}
+.logoHolder{
+  width: 76%;
+}
+.logo{
+  margin-left: calc(50% - 30%);
+  margin-top: 15px;
+}
+.logo > img {
+  max-width: 60%;
+}

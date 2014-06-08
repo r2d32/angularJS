@@ -1,0 +1,26 @@
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    
+  <link type="text/css" rel="stylesheet" href="index.css" />
+  <script src="index.js"></script>
+
+</head>
+<body ng-app="myApp">
+  <h1>Challenge Two</h1>
+  <div ng-controller="myCtrl">
+    <div ng-repeat="number in numbers ">
+      <div ng-if="number% 15 == 0">
+        <p>{{number}} FizzBuzz</p>
+      </div>
+      <div ng-if="number% 3 == 0 && number% 5 !=0">
+        <p>{{number}} Fizz </p>
+      </div>
+      <div ng-if="number% 5 == 0 && number% 3 !=0">
+        <p>{{number}} Buzz </p>
+      </div>
+      <div>
+        <p>{{number}} </p>
+      </div>
+    </div>
+  </div>  
+</body>
