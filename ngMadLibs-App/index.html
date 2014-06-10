@@ -1,5 +1,5 @@
 <head>
-  <html ng-app=''>
+  <html ng-app='myApp'>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
   <link type="text/css" rel="stylesheet" href="index.css" />
   <script src="index.js"></script>
@@ -18,7 +18,7 @@
       <h2>Provide the following words:</h2>
       <table>
         <tr>
-          <td><input type="text" ng-model="male_name" ng-init="male_name='Male Name'"/></td>
+          <td><input type="text" ng-model="male_name" value="{{male_name}}"></td>
           <td><input type="text" ng-model="dirty_task" ng-init="dirty_task='Dirty Task'"/></td> 
           <td><input type="text" ng-model="obnoxious_celebrity" ng-init="obnoxious_celebrity='Obnoxious celebrity'"/></td>
         </tr>
