@@ -38,6 +38,7 @@ table{
 }
 .pic > img{
   max-width: 70%;
+  max-height: 70%;
 }
 .logoHolder{
   width: 76%;

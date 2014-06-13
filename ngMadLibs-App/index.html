@@ -1,5 +1,5 @@
 <head>
-  <html ng-app=''>
+  <html ng-app='myApp'>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
   <link type="text/css" rel="stylesheet" href="index.css" />
   <script src="index.js"></script>
@@ -14,30 +14,25 @@
         <div class="logo"><img ng-src="logo.png"/></div>
       </div>
     </div>
-    <div class="inputHolder">
-      <h2>Provide the following words:</h2>
-      <table>
-        <tr>
-          <td><input type="text" ng-model="male_name" ng-init="male_name='Male Name'"/></td>
-          <td><input type="text" ng-model="dirty_task" ng-init="dirty_task='Dirty Task'"/></td> 
-          <td><input type="text" ng-model="obnoxious_celebrity" ng-init="obnoxious_celebrity='Obnoxious celebrity'"/></td>
-        </tr>
-        <tr>
-          <td><input type="text" ng-model="job_title" ng-init="job_title='Job Title'" /></td>
-          <td><input type="text" ng-model="celebrity" 
-              ng-init="celebrity='Celebrity'"/></td> 
-          <td><input type="text" ng-model="huge_number" ng-init="huge_number='Huge Number'"/></td>
-        </tr>
-        <tr>
-          <td><input type="text" ng-model="tedious_task" ng-init="tedious_task='Tedious Task'"/></td>
-          <td><input type="text" ng-model="useless_skill" ng-init="useless_skill='Useless Skill'"/></td> 
-          <td><input type="text" ng-model="adjective" ng-init="adjective='Adjective'"/></td>
-        </tr>
-      </table>
-    </div>
-    <div class="textHolder">
-        <p><strong>{{male_name}}</strong> was a <strong>{{job_title}}</strong> who loved technology. Altough he loved parts of his job,  he absolutely hated <strong>{{tedious_task}}</strong> and <strong>{{dirty_task}}</strong>. So, <strong>{{male_name}}</strong> met with his life mentor <strong>{{celebrity}}</strong> who told him to learn how to <strong>{{useless_skill}}</strong> with Thinkful. Thinkful didn't offer a course on <strong>{{useless_skill}}</strong> so he studied programming instead.<br><br>What a great decision! Whit his new skills, <strong>{{male_name}}</strong> built a(n) <strong>{{adjective}}</strong> robot named <strong>{{obnoxious_celebrity}}</strong> that not only loved <strong>{{dirty_task}}</strong> but did it <strong>{{huge_number}}</strong> times faster.</p> 
-    </div>
+    <form name="myForm" ng-controller='FormCtrl' a-s="" ng-submit="submit()" novalidate  >
+      <div ng-show="!submitted" class="inputHolder">
+        <h2>Provide the following words:</h2>
+        <input type="text" ng-model="male_name" placeholder="Male Name"/>
+        <input type="text" name="title" ng-model="dirty_task" placeholder="Dirty Task"/>
+        <input type="text" name="title" ng-model="obnoxious_celebrity" placeholder="Obnoxious celebrity"/>
+        <input type="text" name="title" ng-model="job_title" placeholder="Job Title"/>
+        <input type="text" name="title" ng-model="celebrity" placeholder="Celebrity"/>
+        <input type="text" name="title" ng-model="huge_number" placeholder="Huge Number"/>
+        <input type="text" name="title" ng-model="tedious_task" placeholder="Tedious Task"/>
+        <input type="text" name="title" ng-model="useless_skill" placeholder="Useless Skill"/>
+        <input type="text" name="title" ng-model="adjective" placeholder="Adjective"/>
+        <input type="submit" value="submit" />
+      </div>
+      <div ng-show="submitted" class="textHolder">
+        <p><strong>{{male_name_s}}</strong> was a <strong>{{job_title_s}}</strong> who loved technology. Altough he loved parts of his job,  he absolutely hated <strong>{{tedious_task_s}}</strong> and <strong>{{dirty_task_s}}</strong>. So, <strong>{{male_name_s}}</strong> met with his life mentor <strong>{{celebrity_s}}</strong> who told him to learn how to <strong>{{useless_skill_s}}</strong> with Thinkful. Thinkful didn't offer a course on <strong>{{useless_skill_s}}</strong> so he studied programming instead.<br><br>What a great decision! Whit his new skills, <strong>{{male_name_s}}</strong> built a(n) <strong>{{adjective_s}}</strong> robot named <strong>{{obnoxious_celebrity_s}}</strong> that not only loved <strong>{{dirty_task_s}}</strong> but did it <strong>{{huge_number_s}}</strong> times faster.</p> 
+        <input type="submit" value="Start Over" />
+      </div>
+    </form>
   </div>
 </body>
 </html>
