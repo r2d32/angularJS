@@ -1,52 +1,118 @@
 body {
-  font-family: sans-serif;
-}
-.game{
-  width: 66%;
-  border: 2px solid;
-  margin: auto;
+    font: 24px Helvetica;
+    background: #ffffff;
 }
 
-.header {
-  height: 120px;
-  border-bottom: 2px solid;
+#main {
+    min-height: 800px;
+    margin: 0px;
+    padding: 0px;
+    display: -webkit-flex;
+    display:         flex;
+    -webkit-flex-flow: row;
+            flex-flow: row;
 }
-.inputHolder {
-  height: 330px;
-  border-bottom: 2px solid;
-  padding: 0px 70px;
+ 
+#main > article {
+    margin: 0% 16% 0% 2%;
+    padding: 0px;
+    background: #FFFFFF;
+    -webkit-flex: 3 1 50%;
+    flex: 3 1 50%;
+    -webkit-order: 2;
+    order: 2;
 }
-.textHolder {
-  height: 500px;
-  padding: 0px 70px;
+
+#main > nav {
+    margin: 0% 2% 0% 10%;
+    padding: 0px;
+    border: 2px solid #000000;
+    border-radius: 2pt;
+    background: #FFFFFF;
+    -webkit-flex: 1 6 50%;
+    flex: 1 1 50%;
+    -webkit-order: 1;
+    order: 1;
 }
-table{
-  margin: auto;
-  width: 100%;
+  
+.box-title{
+    border-bottom: solid 2px;
+    padding: 10px;
 }
-.header > div {
-  float: left;
+
+.col1, .col2 {
+    display: inline-block;
+    padding: 10px;
+    width: calc(50% - 24px);
 }
-.picHolder{
-  border-right: solid;
-  height: 100%;
-  width: 23%;
+
+input.ng-pristine.ng-valid.ng-valid-number, input.ng-valid.ng-valid-number.ng-dirty ,
+input.ng-dirty.ng-invalid.ng-invalid-number, input.ng-valid-number.ng-valid-min.ng-dirty.ng-invalid.ng-invalid-max{
+    width: 60% !important;
+    padding: 6px !important;
 }
-.pic{
-  margin-left: 15%;
-  margin-top: 15px;
+button {
+    width: 80px;
+    margin-left: 16px;
+    font-size: 16px;
+    padding: 7px;
+    border: 2px solid #949494;
+    background-color: rgb(233, 233, 233);
 }
-.pic > img{
-  max-width: 70%;
-  max-height: 70%;
+.charges > .col2, .earnings > .col1 {
+    width: calc(65% - 24px);
 }
-.logoHolder{
-  width: 76%;
+.charges > .col1, .earnings > .col2 {
+    width: calc(35% - 24px);
 }
-.logo{
-  margin-left: calc(50% - 30%);
-  margin-top: 15px;
+
+div.col1 {
+    text-align: right;
 }
-.logo > img {
-  max-width: 60%;
+
+
+.charges, .earnings {
+    border: solid 2px;
+    margin-bottom: 35px;
+    border-radius: 2px;
+}
+
+
+header, footer {
+    display: block;
+    margin: 4px;
+    padding: 5px;
+    min-height: 100px;
+    border: 1px solid #FFFFFF;
+    border-radius: 7pt;
+    background: #FFFFFF;
+}
+ 
+/* Too narrow to support three columns */
+@media all and (max-width: 640px) {
+  
+    #main, #page {
+        -webkit-flex-flow: column;
+                flex-flow: column;
+           flex-direction: column;
+    }
+
+    #main > article, #main > nav, #main > aside {
+        /* Return them to document order */
+        -webkit-order: 0;
+                order: 0;
+    }
+  
+    #main > nav, #main > aside, header, footer {
+        min-height: 50px;
+        max-height: 50px;
+    }
+    nav, article {
+        min-height: 350px !important;
+        margin: 2% !important;
+        margin-bottom: 25px !important;
+    }
+    .title{
+        width: 80% !important;
+    }
 }

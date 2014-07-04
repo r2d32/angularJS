@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Waiter Earnings Calculator</title>
+
+        <html ng-app='myApp'>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+        <link type="text/css" rel="stylesheet" href="index.css" />
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="title" style=" width: 50%; margin: auto;">
+                <img style="width: 100%;" src="title.png">
+            </div>
+        </header>
+        <form id='main' name="myForm" ng-controller='FormCtrl' a-s="" novalidate  >
+            <nav>
+                <div class="up-meal">
+                    <div class="box-title">Enter the Meal Details</div>
+                    <div>
+                        <div class="col1">Base Meal Price: $ </div>
+                        <div class="col2">
+                            <input type="number"min="0.01" ng-model="base" placeholder="0.00" />
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col1">Tax Rate: % </div>
+                        <div class="col2">
+                            <input type="number"min="0" max="100" ng-model="tax" placeholder="0.00"/>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="col1">Tip Percentage: % </div>
+                        <div class="col2">
+                            <input type="number" min="0" max="100"ng-model="tipPercentage" placeholder="0.00"/>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <button  ng-click="submit()" >submit</button>
+                        <button  ng-click="cancel()" >cancel</button>
+
+                    </div>
+                    <div>
+                        <button  ng-click="reset()" >reset</button>
+                    </div>
+                </div>
+            </nav>
+            <article>
+                <div class="charges">
+                    <div class="box-title">Customer Charges</div>
+                    <div class="col1">Subtotal </div>
+                    <div class="col2">{{subtotal}}</div>
+                    <div class="col1">Tip </div>
+                    <div class="col2">{{tip}}</div>
+                    <div class="col1">Total </div>
+                    <div class="col2">{{total}}</div>
+                </div>
+                <div class="earnings">
+                    <div class="box-title">My Earnings Info</div>
+                    <div class="col1">Tip total </div>
+                    <div class="col2">{{tip_total}}</div>
+                    <div class="col1">Meal Count </div>
+                    <div class="col2">{{meal_count}}</div>
+                    <div class="col1">Average Tip Per Meal </div>
+                    <div class="col2">{{average}}</div>
+
+                </div>                
+            </article>
+        </form>
+        <footer></footer>
+    </body>
+</html>

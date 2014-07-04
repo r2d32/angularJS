@@ -1,29 +1,56 @@
 angular.module('myApp', [])
 .controller('FormCtrl', function($scope, $attrs) {
 
+    $scope.subtotal = 0.00;
+    $scope.tip = 0.00;
+    $scope.total = 0.00;
+    $scope.tip_total = 0.00;
+    $scope.meal_count = 0;
+    $scope.average = 0.00;
+
     $scope.submit = function() {
-        $scope.submitted = !$scope.submitted;
-        $scope.male_name_s = $scope.male_name;
-        $scope.dirty_task_s = $scope.dirty_task;
-        $scope.obnoxious_celebrity_s = $scope.obnoxious_celebrity;
-        $scope.job_title_s = $scope.job_title;
-        $scope.celebrity_s = $scope.celebrity;
-        $scope.huge_number_s = $scope.huge_number;
-        $scope.tedious_task_s = $scope.tedious_task;
-        $scope.useless_skill_s = $scope.useless_skill;
-        $scope.adjective_s = $scope.adjective; 
+        if( $scope.base >= 0 && $scope.tipPercentage >= 0 &&
+            $scope.tax >= 0 ) {
 
-        $scope.male_name_s = "";
-        $scope.dirty_task = "";
-        $scope.obnoxious_celebrity = "";
-        $scope.job_title = "";
-        $scope.celebrity = "";
-        $scope.huge_number = "";
-        $scope.tedious_task = "";
-        $scope.useless_skill = "";
-        $scope.adjective = "";
+            var base = $scope.base;
+            var tax = $scope.tax;
+            var tipPercentage = $scope.tipPercentage;
+
+            var subtotal = ( base + ( base * ( tax / 100 ) ) ).toFixed(2);
+            $scope.subtotal = subtotal;
+            var tip = ( base * ( tipPercentage / 100 ) ).toFixed(2);
+            $scope.tip = tip;
+            $scope.total = ( parseInt(tip) + parseInt(subtotal) ).toFixed(2);
+
+            $scope.tip_total = ( parseInt($scope.tip_total) + parseInt(tip) ).toFixed(2);
+            $scope.meal_count = ( parseInt($scope.meal_count) + 1 ).toFixed(0);
+            $scope.average = ( parseInt($scope.tip_total) / 
+                               parseInt($scope.meal_count) ).toFixed(2);
+
+            $scope.base = undefined;
+            $scope.tax = undefined;
+            $scope.tipPercentage = undefined;
+        } else {
+            alert("Please fill all input fields with numbers");
+            $scope.base = undefined;
+            $scope.tax = undefined;
+            $scope.tipPercentage = undefined;
+        }
     };
-
-    $scope.numberLimitT = 's';
-    $scope.submitted = false;
+    $scope.cancel = function() {
+        $scope.base = "";
+        $scope.tax = "";
+        $scope.tipPercentage = "";
+    };
+    $scope.reset = function() {
+        $scope.base = undefined;
+        $scope.tax = undefined;
+        $scope.tipPercentage = undefined;
+        $scope.subtotal = 0.00;
+        $scope.tip = 0.00;
+        $scope.total = 0.00;
+        $scope.tip_total = 0.00;
+        $scope.meal_count = 0;
+        $scope.average = 0.00;
+    };
 });
