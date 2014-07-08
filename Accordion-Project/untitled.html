@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <html ng-app='MyApp'>
+  <script src="angular.min.js"></script>
+  <link type="text/css" rel="stylesheet" href="index.css" />
+  <script type="text/javascript" src="angular-animate.min.js"></script>
+  <script src="index.js"></script>
+  <script src="jquery.js"></script>
+</head>
+  <body>
+ <header><img src="log.png">
+
+ </header>
+ <div id='main'>
+    <article ng-controller="UsersCtrl">
+
+        <ul>
+            <li ng-repeat="workout in workouts" ng-class="open" ng-click="openAccordion()">
+              {{ workout.name }}
+                <ul>
+                    <li ng-repeat="exercise in workout.exercises"class="exercise">
+                        {{ exercise }}
+                    </li>
+     
+                </ul>
+            </li>
+        </ul>
+        
+    </article>
+    <nav>result</nav>
+    <aside>aside</aside>
+ </div>
+ <footer>footer</footer>
+  </body>
+</html>
